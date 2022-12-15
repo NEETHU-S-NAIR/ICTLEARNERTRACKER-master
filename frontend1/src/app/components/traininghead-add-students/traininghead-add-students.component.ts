@@ -4,12 +4,13 @@ import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-traineraddst',
-  templateUrl: './traineraddst.component.html',
-  styleUrls: ['./traineraddst.component.css']
+  selector: 'app-traininghead-add-students',
+  templateUrl: './traininghead-add-students.component.html',
+  styleUrls: ['./traininghead-add-students.component.css']
 })
-export class TraineraddstComponent implements OnInit {
+export class TrainingheadAddStudentsComponent implements OnInit {
 
+ 
   students  : any = []
   courses   : any = []
   batches   : any = []
@@ -39,8 +40,8 @@ export class TraineraddstComponent implements OnInit {
     course: new FormControl("", [Validators.required]),
     batch:new FormControl("", [Validators.required]),
     program:new FormControl("", [Validators.required]),
-    training_head:new FormControl("", [Validators.required]),
-    placement_officer:new FormControl("", [Validators.required]),
+    // training_head:new FormControl("", [Validators.required]),
+    // placement_officer:new FormControl("", [Validators.required]),
     employment_status:new FormControl("", [Validators.required]),
     course_status:new FormControl("", [Validators.required])
 
@@ -83,7 +84,7 @@ export class TraineraddstComponent implements OnInit {
       if (res) {
         alert("Data saved successfully");
         // console.log("incoming data from addbook", this.addbookform.value);
-        this.router.navigate(['/studentslist'])
+        this.router.navigate(['/traininghead-landing'])
       }
       // console.log(res);
     })

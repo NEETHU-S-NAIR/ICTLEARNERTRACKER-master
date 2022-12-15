@@ -1,6 +1,9 @@
 
-  
-  <div class="content container pt-5 pb-5">
+<div class="sidebar ">
+    <a  routerLink="/studentslist">Home</a>
+    <a routerLink="/user-list">Trainers/Placement Officers</a>
+</div>  
+<div class="content container pt-5 pb-5">
     <div class=" pt-5">
         
         <h3>Add New Student</h3>
@@ -44,19 +47,18 @@
                   </select>
               
             </div>
-            <div class="form-group pt-3">
+            <!-- <div class="form-group pt-3">
                 <select class="form-select" aria-label="Default select example" name="training_head" formControlName="training_head" >
                     <option value="" selected disabled>Select Training Head</option>
-                    <option value="Training Head 1">Training Head 1</option>
+                    <option [value]="user.user_name" *ngFor="let user of users "  >{{user.user_name}}</option>
                   </select>
             </div>
             <div class="form-group pt-3">
                 <select class="form-select" aria-label="Default select example" name="placement_officer" formControlName="placement_officer" >
                     <option value="" selected disabled>Select Placement head</option>
-                    <option value="Placement Head 1">Placement Head 1</option>
+                    <option [value]="user.user_name" *ngFor="let user of users"  >{{user.user_name}}</option>
                   </select>
-                
-            </div>
+            </div> -->
             <div class="form-group pt-3">
                 <select class="form-select" aria-label="Default select example" name="employment_status"formControlName="employment_status" >
                     <option value="" selected disabled>Select Placement Status </option>
@@ -79,8 +81,8 @@
         <div class="col-6">
 
            
-            <div class="form-group">
-                <textarea name="contact_address" class="form-control" id="" cols="30" rows="22" required placeholder="Address" formControlName="contact_address" ></textarea>
+            <div class="form-group mt-3">
+                <textarea name="contact_address" class="form-control" id="" cols="30" rows="17" required placeholder="Address" formControlName="contact_address" ></textarea>
             </div>
 
         </div>
@@ -90,7 +92,7 @@
     <div class="add pt-5" style="text-align:center">
         <button type="submit" [disabled]="addstudentform.invalid"  class="btn btn-success">Add Student</button>
         <button type="reset" class="btn btn-warning m-2 ">Clear</button>
-        <button type="button" class="btn btn-warning m-2 " routerLink="/studentslist">Back</button>
+        <button type="button" class="btn btn-warning m-2 " routerLink="/traininghead-landing">Back</button>
     </div>
 
 </form>

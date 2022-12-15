@@ -14,6 +14,8 @@ export class AddstudentsComponent implements OnInit {
   courses   : any = []
   batches   : any = []
   programs  : any = []
+  users     : any = [];
+  id        : any;
 
 
  
@@ -28,6 +30,8 @@ export class AddstudentsComponent implements OnInit {
     this.getcourseData();
     this.getbatchData();
     this.getprogramData();
+    this.getuserData();
+
    
   }
 
@@ -39,19 +43,25 @@ export class AddstudentsComponent implements OnInit {
     course: new FormControl("", [Validators.required]),
     batch:new FormControl("", [Validators.required]),
     program:new FormControl("", [Validators.required]),
-    training_head:new FormControl("", [Validators.required]),
-    placement_officer:new FormControl("", [Validators.required]),
+    // training_head:new FormControl("", [Validators.required]),
+    // placement_officer:new FormControl("", [Validators.required]),
     employment_status:new FormControl("", [Validators.required]),
     course_status:new FormControl("", [Validators.required])
 
   })
+  // funtion for get user data to selectbox
+  getuserData() {
+    this.apiService.getuserList().subscribe(res => {
+      this.users = res;
+      console.log(this.users.user_type);
+    })
+  }
 
   // function for get course data to selctbox
 
   getcourseData() {
     this.apiService.getcourseList().subscribe(res => {
       this.courses = res
-  
       console.log(this.courses)
     })
   }

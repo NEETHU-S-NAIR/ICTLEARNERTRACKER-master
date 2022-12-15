@@ -8,8 +8,22 @@ body {
   align-items: center;
   padding-top: 250px;
   padding-bottom: 250px;
-  background-color: #ececec;
+  background-color: #dbdbdb;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/005/263/696/non_2x/e-learning-concept-isometric-mobile-or-smartphone-pencil-book-and-cloud-computing-for-study-on-green-and-white-background-online-study-from-home-online-course-e-book-store-free-vector.jpg");
+ 
+
 }
+
+.login-container{
+  background-color: aliceblue;
+  border-radius: 25px;
+  /* box-shadow: 10px 10px lightblue; */
+  padding: 50px;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/941/002/small/small-hexagon-shape-with-light-white-and-grey-color-seamless-pattern-background-free-vector.jpg");
+
+}
+
+
 
 h1{
     color: rgb(29, 29, 29);

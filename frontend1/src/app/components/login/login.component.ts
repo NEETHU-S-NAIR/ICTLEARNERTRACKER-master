@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
   userform={
     
     'email' : '',
@@ -33,16 +35,22 @@ userverify(){
     if(res.message){
       alert(res.message)
     }
-    else if (res.email_id == "admin123@gmail.com" && res.password =="admin123"){
+    else if (res.email_id === "admin123@gmail.com" && res.password ==="admin123"){
       alert("Admin has successfully logged in")
       this.router.navigate(['/studentslist'])
 
     }
-    else{
+    else if(res.user_type==="Trainer"){
       alert("Staff has successfully logged in")
 
-      this.router.navigate(['/landingtrainer'])
+      this.router.navigate(['/traininghead-landing'])
 
+    }
+    else if (res.user_type==="plcamentofficer"){
+      this.router.navigate(['/placementofficer-landing'])
+    }
+    else{
+      alert("error in credentials");
     }
   })
   

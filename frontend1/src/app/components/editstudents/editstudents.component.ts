@@ -15,6 +15,8 @@ export class EditstudentsComponent implements OnInit {
   courses   : any = []
   batches   : any = []
   programs  : any = []
+  users     : any = [];
+
 
   constructor(public apiService: ApiService, private router: Router) { }
 
@@ -23,6 +25,8 @@ export class EditstudentsComponent implements OnInit {
     this.getcourseData();
     this.getbatchData();
     this.getprogramData();
+    this.getuserData();
+
 
   }
 
@@ -36,8 +40,8 @@ export class EditstudentsComponent implements OnInit {
     course:'',
     batch:'',
     program:'',
-    training_head:'',
-    placement_officer:'',
+    // training_head:'',
+    // placement_officer:'',
     employment_status:'',
     course_status:''
 
@@ -60,8 +64,8 @@ export class EditstudentsComponent implements OnInit {
       course: new FormControl("", [Validators.required]),
       batch: new FormControl("", [Validators.required]),
       program: new FormControl("", [Validators.required]),
-      training_head: new FormControl("", [Validators.required]),
-      placement_officer: new FormControl("", [Validators.required]),
+      // training_head: new FormControl("", [Validators.required]),
+      // placement_officer: new FormControl("", [Validators.required]),
       employment_status: new FormControl("", [Validators.required]),
       course_status: new FormControl("", [Validators.required]),
     })
@@ -75,8 +79,8 @@ export class EditstudentsComponent implements OnInit {
         course: this.studentsdata.course,
         batch: this.studentsdata.batch,
         program: this.studentsdata.program,
-        training_head: this.studentsdata.training_head,
-        placement_officer: this.studentsdata.placement_officer,
+        // training_head: this.studentsdata.training_head,
+        // placement_officer: this.studentsdata.placement_officer,
         employment_status: this.studentsdata.employment_status,
         course_status: this.studentsdata.course_status,
   
@@ -105,6 +109,15 @@ export class EditstudentsComponent implements OnInit {
       this.courses = res
   
       console.log(this.courses)
+    })
+  }
+
+  
+  // funtion for get user data to selectbox
+  getuserData() {
+    this.apiService.getuserList().subscribe(res => {
+      this.users = res;
+      console.log(this.users.user_type);
     })
   }
 

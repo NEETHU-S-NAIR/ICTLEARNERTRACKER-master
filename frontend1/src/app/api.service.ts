@@ -7,8 +7,8 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiService {
 
-  // apiUrl:String = 'http://localhost:3000/api'
-  apiUrl:String ='api'
+  apiUrl:String = 'http://localhost:3000/api'
+  // apiUrl:String ='api'
 
   constructor(private http :HttpClient) { }
 
@@ -58,7 +58,7 @@ getuserdetails(id:any){
   return this.http.get(`${this.apiUrl}/user/${id}`);
 }
 
-updateuserdetails(data:any){
+updateuserdetails(data: any, _id: any){
   return this.http.put(`${this.apiUrl}/user`,data);
 }
 
@@ -139,7 +139,13 @@ deleteprogram(id:any){
 //------------------------------------------  settings end points are here ------------------------------------------------- //
 
 
+uploadCSV(file:any) {
+  return this.http.post(`${this.apiUrl}/uploadlearners`, file)
+}
 
+upload(file:any) {
+  return this.http.post(`${this.apiUrl}/upload`, file)
+}
 
 
 
