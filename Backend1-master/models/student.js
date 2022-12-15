@@ -10,8 +10,8 @@ const studentschema = new schema({
     course: { type: String, requied: true },
     batch: { type: String, requied: true },
     program: { type: String, requied: true },
-    training_head: { type: String, requied: true },
-    placement_officer: { type: String, requied: true },
+    // training_head: { type: String, requied: true },
+    // placement_officer: { type: String, requied: true },
     employment_status: { type: String, requied: true, default: "Not Employeed" },
     course_status: { type: String, requied: true, default: "enrolled" },
     date: { type: Date, default: Date.now() }

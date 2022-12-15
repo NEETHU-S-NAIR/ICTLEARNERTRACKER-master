@@ -4,20 +4,20 @@ const router = express.Router();
 const batchcntrlr = require('../controllers/batch')
 
 //add batch 
-router.post('/api/add_batch', batchcntrlr.addbatch)
+router.post('/add_batch', batchcntrlr.addbatch)
     //read all batch
 
-router.get('/api/batchlist', batchcntrlr.getallbatch)
+router.get('/batchlist', batchcntrlr.getallbatch)
 
 // read single batch detail
-router.get('/api/getsinglebatch/:id', batchcntrlr.getonebatch)
+router.get('/getsinglebatch/:id', batchcntrlr.getonebatch)
 
 /
 // update batch detail
-router.put('/api/updatebatch', batchcntrlr.updatebatch)
+router.put('/updatebatch', batchcntrlr.updatebatch)
 
 // delete batch detail
-router.delete('/api/deletebatch/:id', batchcntrlr.deletebatch)
+router.delete('/deletebatch/:id', batchcntrlr.deletebatch)
 
 
 

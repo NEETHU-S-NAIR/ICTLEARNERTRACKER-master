@@ -36,8 +36,8 @@ exports.addstudent = async(req, res) => {
             course: req.body.course,
             batch: req.body.batch,
             program: req.body.program,
-            training_head: req.body.training_head,
-            placement_officer: req.body.placement_officer,
+            // training_head: req.body.training_head,
+            // placement_officer: req.body.placement_officer,
             employment_status: req.body.employment_status,
             course_status: req.body.course_status,
             date: req.body.date
@@ -66,8 +66,8 @@ exports.updatestudent = async(req, res) => {
             course: req.body.data.course,
             batch: req.body.data.batch,
             program: req.body.data.program,
-            training_head: req.body.data.training_head,
-            placement_officer: req.body.data.placement_officer,
+            // training_head: req.body.data.training_head,
+            // placement_officer: req.body.data.placement_officer,
             employment_status: req.body.data.employment_status,
             course_status: req.body.data.course_status
         }
@@ -89,3 +89,7 @@ exports.deletestudent = async(req, res) => {
         console.log(error);
     }
 }
+
+
+// add csv fileinfo
+exports.addCSVLearners = async(req, res) => {}

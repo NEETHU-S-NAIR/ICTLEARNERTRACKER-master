@@ -32,7 +32,10 @@ const userSchema = new Schema({
     course: {
         type: String,
         required: true
-    }
+    },
+   
+    
+
 
 })
 userSchema.plugin(uniqueValidator);
