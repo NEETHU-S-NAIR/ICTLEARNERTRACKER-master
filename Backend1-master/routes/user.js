@@ -23,23 +23,23 @@ function verifytoken(req, res, next) {
 }
 
 //read user list 
-router.get('/userlist', verifytoken, usercntrlr.getAllUser)
+router.get('/api/userlist', verifytoken, usercntrlr.getAllUser)
 
 // read single user detail
-router.get('/user/:id', verifytoken, usercntrlr.getOneUser)
+router.get('/api/user/:id', verifytoken, usercntrlr.getOneUser)
 
 // add new user
-router.post('/user', verifytoken, usercntrlr.addUser)
+router.post('/api/user', verifytoken, usercntrlr.addUser)
 
 // update user detail
-router.put('/user', verifytoken, usercntrlr.updateUser)
+router.put('/api/user', verifytoken, usercntrlr.updateUser)
 
 // delete user detail
-router.delete('/user/:id', verifytoken, usercntrlr.deleteUser)
+router.delete('/api/user/:id', verifytoken, usercntrlr.deleteUser)
 
 
 // Login Api
-router.post('/login', usercntrlr.login);
+router.post('/api/login', usercntrlr.login);
 
 
 

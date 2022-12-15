@@ -5,20 +5,20 @@ const programcntrlr = require('../controllers/program')
 
 //add program 
 
-router.post('/add_program', programcntrlr.addprogram)
+router.post('/api/add_program', programcntrlr.addprogram)
     //read all program
 
-router.get('/programlist', programcntrlr.getallprogram)
+router.get('/api/programlist', programcntrlr.getallprogram)
 
 // read single program detail
-router.get('/getsingleprogram/:id', programcntrlr.getoneprogram)
+router.get('/api/getsingleprogram/:id', programcntrlr.getoneprogram)
 
 /
 // update  program detail
-router.put('/updateprogram', programcntrlr.updateprogram)
+router.put('/api/updateprogram', programcntrlr.updateprogram)
 
 // delete program detail
-router.delete('/deleteprogram/:id', programcntrlr.deleteprogram)
+router.delete('/api/deleteprogram/:id', programcntrlr.deleteprogram)
 
 
 

@@ -15,6 +15,9 @@ app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, './uploads')));
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('./dist/frondend1'));
+
+
 //all api 
 const userApi = require('./routes/user');
 app.use('/api', userApi);
@@ -27,6 +30,9 @@ app.use('/api', courseApi);
 const programApi = require('./routes/program');
 app.use('/api', programApi);
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname +
+    '/dist/frontend1/index.html'))}); 
 
 //server code
 app.listen(PORT, () => {

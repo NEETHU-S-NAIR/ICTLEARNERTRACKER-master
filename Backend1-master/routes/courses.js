@@ -4,20 +4,20 @@ const router = express.Router();
 const coursecntrlr = require('../controllers/courses')
 
 //add course 
-router.post('/add_course', coursecntrlr.addcourse)
+router.post('/api/add_course', coursecntrlr.addcourse)
     //read all course
 
-router.get('/courselist', coursecntrlr.getallcourses)
+router.get('/api/courselist', coursecntrlr.getallcourses)
 
 // read single couse detail
-router.get('/getsinglecourse/:id', coursecntrlr.getonecourse)
+router.get('/api/getsinglecourse/:id', coursecntrlr.getonecourse)
 
 /
 // update  course detail
-router.put('/updatecourse', coursecntrlr.updatecourse)
+router.put('/api/updatecourse', coursecntrlr.updatecourse)
 
 // delete course detail
-router.delete('/deletecourse/:id', coursecntrlr.deletecourse)
+router.delete('/api/deletecourse/:id', coursecntrlr.deletecourse)
 
 
 
